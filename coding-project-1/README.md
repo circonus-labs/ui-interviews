@@ -4,7 +4,7 @@ Pull CPU Utilization data from a sample Circonus account (via our API) and use i
 The General API docs provide general details about accessing the Circonus API, such as authentication procedures, and the Data Fetch API docs provide details about the particular data "/fetch" endpoint you will need to use to retrieve multiple streams of data simultaneously for the graph.
 
 ## Resources
-* [Mockup](coding-project-1/coding-project-1-mockup.png)
+* [Mockup](coding-project-1-mockup.png)
 * Styles: 
 ```
 Page Background Color: #edf0f1
