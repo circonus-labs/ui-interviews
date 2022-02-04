@@ -1,5 +1,5 @@
 # Coding Project #1
-Pull CPU Utilization data from a sample Circonus account (via our API) and use it to render a sample graph using the Highcharts library. The sample graph should be styled like the provided mockup and should have simple date range selectors in the upper right that change the view to show the most recent 1 hour/2 hours/6 hours/1 day of data available. You will be provided with read-only access to the associated Circonus account, and the other needed resources are available for free (Highcharts is available to use for free via their CDN.)
+Pull CPU Utilization data from a sample Circonus account (via our API) and use it to render a sample graph using the Highcharts library. The sample graph should be styled like the provided mockup and should have simple date range selectors in the upper right that change the view to show the most recent 1 hour/2 hours/6 hours/1 day of data available. You will be provided with an account ID & API token for the associated Circonus account, and the other needed resources are available for free (Highcharts is available to use for free via their CDN.)
 
 The General API docs provide general details about accessing the Circonus API, such as authentication procedures, and the Data Fetch API docs provide details about the particular data "/fetch" endpoint you will need to use to retrieve multiple streams of data simultaneously for the graph.
 
@@ -24,6 +24,14 @@ Date Selector Selected Text Color: #ffffff
 ```
 * [Highcharts docs](https://www.highcharts.com/docs/index)
 * [Open Sans font](https://fonts.google.com/specimen/Open+Sans)
-* [CPU Utilization metrics at Circonus](https://kamelkev.circonus.com/checks/metrics?q=all:[m:i:Q1BVIHV0aWxpemF0aW9u])
 * [Circonus General API docs](https://docs.circonus.com/circonus/api/)
 * [Circonus Data Fetch API docs](https://docs.circonus.com/irondb/api/data-retrieval/#retrieving-and-transforming-data)
+
+When searching for metrics, use the following:
+* Metrics search string: 'and(__name:b"Q1BVIHV0aWxpemF0aW9u")'
+* Account ID & API Token will be provided once you are ready to begin
+* Create your own app name (it's only for internal reference)
+
+We recently removed CORS support from our public API, so until it's added back in, you will need to either pull the data using a non-browser method (e.g. via calling cURL through PHP), or use a browser add-on to simulate CORS headers:
+* https://addons.mozilla.org/en-US/firefox/addon/access-control-allow-origin/
+* https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf
